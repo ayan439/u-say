@@ -7,11 +7,12 @@ export function generateRtcToken(channelName, uid, ttlSeconds = 3600) {
   const role = RtcRole.PUBLISHER; // user will publish/subscribe to audio
   const currentTimestamp = Math.floor(Date.now() / 1000);
   const privilegeExpireTs = currentTimestamp + ttlSeconds;
+  const numericUid = Number(uid);
   const token = RtcTokenBuilder.buildTokenWithUid(
     appID,
     appCertificate,
     channelName,
-    uid,
+    numericUid,
     role,
     privilegeExpireTs
   );
