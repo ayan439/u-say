@@ -1,5 +1,6 @@
 // agoraToken.js
-import { RtcTokenBuilder, RtcRole } from "agora-access-token";
+import pkg from "agora-access-token";
+const { RtcTokenBuilder, RtcRole } = pkg;
 
 export function generateRtcToken(channelName, uid, ttlSeconds = 3600) {
   const appID = process.env.AGORA_APP_ID;
